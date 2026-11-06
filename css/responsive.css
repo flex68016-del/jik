@@ -1,0 +1,61 @@
+/* ============================================================
+   JIK — Responsive global (mobile-first : art direction mobile)
+   ============================================================ */
+
+/* La grille éditoriale asymétrique devient une colonne rythmée sur mobile */
+@media (max-width: 767px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .editorial-grid .product-card {
+    grid-column: auto !important;
+    margin-top: 0 !important;
+  }
+
+  /* Rythme alterné sur mobile : largeur réduite alternée */
+  .editorial-grid .product-card:nth-child(even) {
+    width: 86%;
+    margin-left: auto;
+  }
+
+  .editorial-grid .product-card:nth-child(odd) {
+    width: 92%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .product-card:nth-child(6n + 1),
+  .product-card:nth-child(6n + 2),
+  .product-card:nth-child(6n + 3),
+  .product-card:nth-child(6n + 4),
+  .product-card:nth-child(6n + 5),
+  .product-card:nth-child(6n + 6) {
+    grid-column: span 6;
+    margin-top: 0;
+  }
+
+  .product-card:nth-child(even) {
+    margin-top: clamp(2rem, 6vw, 5rem) !important;
+  }
+}
+
+/* Anti-débordement horizontal global */
+body,
+.section,
+.container {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Accessibilité : cibles tactiles >= 44px */
+@media (pointer: coarse) {
+  .filter-chip,
+  .lang-switch__btn,
+  .navbar__link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}

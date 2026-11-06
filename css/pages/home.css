@@ -1,0 +1,345 @@
+/* ============================================================
+   JIK — Homepage : sections éditoriales
+   ============================================================ */
+
+/* ---------- A. HERO (composition asymétrique) ---------- */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--jik-black);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: -12% 0;
+  z-index: 0;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.42) contrast(1.05);
+}
+
+/* Fallback typographique si pas de photo de campagne */
+.hero--no-photo .hero__bg {
+  background:
+    radial-gradient(120% 90% at 80% 10%, rgba(214, 166, 59, 0.12), transparent 55%),
+    var(--jik-dark-gray);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding: 0 var(--space-gutter) clamp(4rem, 8vh, 7rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) auto;
+  align-items: end;
+  gap: 2rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  line-height: 0.92;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero__title .hero__title-line2 {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--jik-cream);
+}
+
+.hero__aside {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+  max-width: 320px;
+}
+
+.hero__support {
+  color: var(--jik-gray);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  right: var(--space-gutter);
+  z-index: 1;
+}
+
+/* ---------- B. MANIFESTE ---------- */
+
+.manifesto {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  background: var(--jik-black);
+}
+
+.manifesto__line {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+}
+
+.manifesto__line--outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--jik-cream);
+}
+
+.manifesto__meaning {
+  display: grid;
+  gap: 0.5rem;
+  font-family: var(--font-label);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--jik-gold);
+  font-size: 1rem;
+}
+
+/* ---------- C. COLLECTION ---------- */
+
+.collection__head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.collection__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.collection__intro {
+  max-width: 52ch;
+  color: var(--jik-gray);
+  margin: 0;
+}
+
+/* ---------- D. CAMPAGNE vedette ---------- */
+
+.campaign {
+  background: var(--jik-cream);
+  color: var(--jik-black);
+  overflow: hidden;
+}
+
+.campaign__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.campaign__image {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.campaign__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 4 / 3;
+}
+
+.campaign__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0 0 1.5rem;
+}
+
+.campaign__support {
+  color: var(--jik-gray);
+  max-width: 40ch;
+  margin: 0 0 2.5rem;
+}
+
+/* ---------- E. IDENTITÉ AFRICAINE ---------- */
+
+.africa {
+  background: var(--jik-dark-gray);
+}
+
+.africa__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.africa__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0 0 1.5rem;
+}
+
+.africa__title em {
+  font-style: normal;
+  color: var(--jik-gold);
+}
+
+.africa__body {
+  color: var(--jik-gray);
+  max-width: 46ch;
+  margin: 0 0 2.5rem;
+}
+
+.africa__card {
+  background: var(--jik-black);
+  border: 1px solid var(--jik-border);
+  padding: clamp(1.5rem, 3vw, 3rem);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.africa__card img {
+  width: 100%;
+  object-fit: contain;
+  background: var(--jik-dark-gray);
+}
+
+.africa__ewe {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--jik-cream);
+}
+
+.africa__ewe-label {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--jik-gold);
+  margin: 0;
+}
+
+/* ---------- F. LOOKBOOK PREVIEW ---------- */
+
+.lookbook-preview__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.lookbook-preview__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.lookbook-preview__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(72vw, 560px);
+  gap: clamp(1rem, 2vw, 2rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--jik-gold) transparent;
+}
+
+.lookbook-preview__item {
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  background: var(--jik-dark-gray);
+}
+
+.lookbook-preview__item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  transition: transform 700ms var(--ease-out);
+}
+
+.lookbook-preview__item:hover img {
+  transform: scale(1.04);
+}
+
+.lookbook-preview__caption {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jik-gray);
+}
+
+/* ---------- G. MANIFESTE FINAL ---------- */
+
+.final {
+  min-height: 92vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--jik-black);
+  gap: 2.5rem;
+}
+
+.final__line {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.final__line--gold {
+  color: var(--jik-gold);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 991px) {
+  .campaign__grid,
+  .africa__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__aside {
+    max-width: 100%;
+  }
+}

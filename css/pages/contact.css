@@ -1,0 +1,118 @@
+/* ============================================================
+   JIK — Contact : cartes, FAQ, légal
+   ============================================================ */
+
+.contact-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding: calc(6rem + var(--space-gutter)) var(--space-gutter) var(--space-section);
+}
+
+.contact-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: var(--space-section);
+}
+
+.contact-card {
+  border: 1px solid var(--jik-border);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+  transition: border-color var(--dur-ui) var(--ease-out);
+}
+
+.contact-card:hover {
+  border-color: var(--jik-gold);
+}
+
+.contact-card__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--jik-gold);
+}
+
+.contact-card__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contact-card__body {
+  color: var(--jik-gray);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-card__link {
+  font-family: var(--font-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jik-gold);
+  justify-self: start;
+  margin-top: 0.5rem;
+}
+
+.contact-card__pending {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--jik-gray);
+  margin: 0;
+}
+
+/* FAQ */
+.faq {
+  padding-block: var(--space-section);
+}
+
+.faq__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  text-transform: uppercase;
+  margin: 0 0 2.5rem;
+}
+
+.faq-item__question svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Légal */
+.legal {
+  border-top: 1px solid var(--jik-border);
+  padding-block: var(--space-section);
+  display: grid;
+  gap: 3rem;
+}
+
+.legal h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-subtitle);
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.legal p {
+  color: var(--jik-gray);
+  max-width: 70ch;
+  margin: 0 0 1rem;
+}
+
+.legal__pending {
+  border: 1px dashed var(--jik-gold);
+  padding: 1.25rem 1.5rem;
+  color: var(--jik-cream);
+  font-size: 0.9rem;
+}

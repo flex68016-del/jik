@@ -1,0 +1,109 @@
+/* ============================================================
+   JIK — Notre Histoire : storytelling cinématique
+   ============================================================ */
+
+.story-hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--space-gutter);
+  background: var(--jik-black);
+  gap: 2rem;
+}
+
+.story-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.story-hero__lead {
+  color: var(--jik-gray);
+  max-width: 48ch;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* Blocs narratifs alternés */
+.story-block {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+.story-block__num {
+  grid-column: 1 / span 2;
+  font-family: var(--font-label);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--jik-gold);
+  opacity: 0.85;
+  line-height: 1;
+}
+
+.story-block__content {
+  grid-column: 3 / span 9;
+  display: grid;
+  gap: 1rem;
+}
+
+.story-block__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.story-block__body {
+  color: var(--jik-gray);
+  max-width: 60ch;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.story-block--light {
+  color: var(--jik-black);
+}
+
+.story-block--light .story-block__body {
+  color: #4a463f;
+}
+
+/* Grand interlude typographique */
+.story-interlude {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--space-gutter);
+}
+
+.story-interlude__line {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--jik-gold);
+}
+
+.story-interlude__line--fill {
+  color: var(--jik-cream);
+  -webkit-text-stroke: 0;
+}
+
+@media (max-width: 767px) {
+  .story-block {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .story-block__num,
+  .story-block__content {
+    grid-column: auto;
+  }
+}

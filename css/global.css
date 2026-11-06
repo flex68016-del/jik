@@ -1,0 +1,331 @@
+/* ============================================================
+   JIK — Styles globaux
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis gère le défilement */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  background: var(--jik-black);
+  color: var(--jik-cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Accessibilité — focus visible partout */
+:focus-visible {
+  outline: 2px solid var(--jik-gold);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 3000;
+  padding: 0.75rem 1.25rem;
+  background: var(--jik-gold);
+  color: var(--jik-black);
+  font-family: var(--font-label);
+  letter-spacing: 0.08em;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Typographie éditoriale ---------- */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--jik-gray);
+  margin: 0;
+}
+
+.eyebrow--gold {
+  color: var(--jik-gold);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--space-section);
+}
+
+.container {
+  width: min(1440px, 100% - 2 * var(--space-gutter));
+  margin-inline: auto;
+}
+
+.section--light {
+  background: var(--jik-cream);
+  color: var(--jik-black);
+}
+
+.section--dark {
+  background: var(--jik-black);
+  color: var(--jik-cream);
+}
+
+.section--dark-gray {
+  background: var(--jik-dark-gray);
+  color: var(--jik-cream);
+}
+
+/* ---------- Signature graphique : ligne verticale du logo ---------- */
+/* Élément récurrent tiré du logo officiel (trait vertical + losanges) */
+
+.jik-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: max-content;
+}
+
+.jik-divider__line {
+  width: 2px;
+  height: clamp(2.5rem, 6vh, 5rem);
+  background: var(--jik-gold);
+}
+
+.jik-divider__diamond {
+  width: 9px;
+  height: 9px;
+  background: var(--jik-gold);
+  transform: rotate(45deg);
+}
+
+/* ---------- Boutons ---------- */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  font-family: var(--font-label);
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid var(--jik-cream);
+  color: var(--jik-cream);
+  overflow: hidden;
+  transition: color var(--dur-ui) var(--ease-out);
+  will-change: transform;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--jik-cream);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--dur-ui) var(--ease-out);
+  z-index: -1;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  color: var(--jik-black);
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+  transform: scaleY(1);
+}
+
+.btn--gold {
+  border-color: var(--jik-gold);
+  background: var(--jik-gold);
+  color: var(--jik-black);
+}
+
+.btn--gold::after {
+  background: var(--jik-black);
+}
+
+.btn--gold:hover,
+.btn--gold:focus-visible {
+  color: var(--jik-gold);
+  border-color: var(--jik-black);
+}
+
+.btn--on-light {
+  border-color: var(--jik-black);
+  color: var(--jik-black);
+}
+
+.btn--on-light::after {
+  background: var(--jik-black);
+}
+
+.btn--on-light:hover,
+.btn--on-light:focus-visible {
+  color: var(--jik-cream);
+}
+
+/* ---------- Logo ---------- */
+
+.logo-img {
+  width: auto;
+  display: block;
+}
+
+/* ---------- Curseur custom (desktop uniquement) ---------- */
+
+.jik-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4000;
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--jik-gold);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.jik-cursor__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-family: var(--font-label);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: var(--jik-black);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.jik-cursor.is-active {
+  width: 72px;
+  height: 72px;
+  background: var(--jik-cream);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .jik-cursor {
+    display: block;
+  }
+}
+
+/* ---------- Overlay de transition de page ---------- */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+}
+
+.page-transition__layer {
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.page-transition__layer--cream {
+  background: var(--jik-cream);
+}
+
+.page-transition__layer--black {
+  background: var(--jik-black);
+}
+
+.page-transition__logo {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  width: 120px;
+}
+
+/* ---------- Etat initial animé (avant reveal JS) ---------- */
+
+.js [data-reveal],
+.js [data-hero] {
+  opacity: 0;
+}
+
+html:not(.js) [data-reveal],
+html:not(.js) [data-hero] {
+  opacity: 1;
+}
+
+/* ---------- Sélection ---------- */
+
+::selection {
+  background: var(--jik-gold);
+  color: var(--jik-black);
+}

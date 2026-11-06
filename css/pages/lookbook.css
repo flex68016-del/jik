@@ -1,0 +1,136 @@
+/* ============================================================
+   JIK — Lookbook : galerie éditoriale immersive
+   ============================================================ */
+
+.lookbook-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-end;
+  padding: calc(6rem + var(--space-gutter)) var(--space-gutter) var(--space-section);
+}
+
+.lookbook-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.lookbook-hero__note {
+  color: var(--jik-gray);
+  max-width: 60ch;
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Galerie asymétrique pleine largeur */
+.lookbook-gallery {
+  display: grid;
+  gap: clamp(3rem, 8vw, 8rem);
+  padding-bottom: var(--space-section);
+}
+
+.look-item {
+  display: grid;
+  gap: 1rem;
+}
+
+.look-item__frame {
+  overflow: hidden;
+  background: var(--jik-dark-gray);
+  display: grid;
+  place-items: center;
+}
+
+.look-item__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 800ms var(--ease-out);
+}
+
+.look-item:hover .look-item__frame img {
+  transform: scale(1.03);
+}
+
+.look-item__caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-label);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jik-gray);
+}
+
+.look-item__caption strong {
+  color: var(--jik-cream);
+  font-weight: 400;
+}
+
+/* Compositions alternées */
+.look-item--full .look-item__frame {
+  aspect-ratio: 16 / 9;
+}
+
+.look-item--left {
+  width: min(58%, 720px);
+}
+
+.look-item--left .look-item__frame {
+  aspect-ratio: 3 / 4;
+}
+
+.look-item--right {
+  width: min(58%, 720px);
+  margin-left: auto;
+}
+
+.look-item--right .look-item__frame {
+  aspect-ratio: 4 / 5;
+}
+
+.look-item--duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: end;
+}
+
+.look-item--duo .look-item__frame {
+  aspect-ratio: 4 / 5;
+}
+
+.look-item--duo .look-item--right {
+  margin-bottom: clamp(2rem, 6vw, 5rem);
+}
+
+.look-item--duo .look-item--left {
+  width: auto;
+}
+
+.look-item--duo .look-item--right {
+  width: auto;
+}
+
+/* CTA fin de galerie */
+.lookbook-cta {
+  text-align: center;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  padding-block: var(--space-section);
+}
+
+@media (max-width: 767px) {
+  .look-item--left,
+  .look-item--right {
+    width: 88%;
+  }
+  .look-item--duo {
+    grid-template-columns: 1fr;
+  }
+}

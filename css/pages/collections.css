@@ -1,0 +1,12 @@
+/* ============================================================
+   JIK — Boutique : styles spécifiques
+   ============================================================ */
+
+.shop-empty {
+  grid-column: 1 / -1;
+  color: var(--jik-gray);
+  font-family: var(--font-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-block: 3rem;
+}

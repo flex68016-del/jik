@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lookbook — Éditorial | JIK</title>
+  <meta name="description" content="L'éditorial visuel de JIK : compositions, matières et statements.">
+  <link rel="canonical" href="../pages/lookbook.html" data-canonical>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JIK — Jesus Is King">
+  <meta property="og:title" content="Lookbook | JIK">
+  <meta property="og:description" content="Une première lecture visuelle de l'univers JIK.">
+  <meta property="og:image" content="../assets/products/jik-006-left-99.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/pages/pages.css">
+  <link rel="stylesheet" href="../css/pages/lookbook.css">
+</head>
+<body data-page="lookbook" data-base-path="../">
+
+  <main>
+    <header class="lookbook-hero">
+      <div>
+        <p class="eyebrow eyebrow--gold" data-reveal data-i18n="lookbook.eyebrow">Lookbook</p>
+        <h1 class="lookbook-hero__title" data-split="chars" data-i18n="lookbook.title">Éditorial 01</h1>
+        <p class="lookbook-hero__note" data-reveal data-i18n="lookbook.intro">Une première lecture visuelle de l'univers JIK. Les campagnes photo avec modèles compléteront cette galerie prochainement.</p>
+      </div>
+    </header>
+
+    <section class="container" aria-label="Galerie">
+      <div class="lookbook-gallery" data-lookbook-gallery>
+        <!-- Rendu JS -->
+      </div>
+
+      <p class="lookbook-hero__note" data-reveal data-i18n="lookbook.placeholderNote" style="padding-bottom:2rem;">Note : les visuels produits officiels sont présentés ici en éditorial. Les photographies de campagne arriveront avec les futures collections.</p>
+    </section>
+
+    <section class="lookbook-cta section" aria-label="Aller plus loin">
+      <h2 class="display" data-split="chars" style="font-size:var(--fs-display);">The First Statement</h2>
+      <a href="collections.html" class="btn btn--gold" data-magnetic data-cursor="explore" data-i18n="common.exploreCollection">Explorer la collection</a>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="Aperçu de l'image">
+    <button class="lightbox__close" data-lightbox-close data-i18n="a11y.closeLightbox">Fermer</button>
+    <img src="" alt="" data-lightbox-image>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@4.3.0/lib/anime.umd.min.js"></script>
+
+  <script src="../js/config/config.js"></script>
+  <script src="../js/data/products.js"></script>
+  <script src="../js/data/translations.js"></script>
+  <script src="../js/utils/utils.js"></script>
+  <script src="../js/components/i18n.js"></script>
+  <script src="../js/components/layout.js"></script>
+  <script src="../js/components/product-card.js"></script>
+  <script src="../js/animations/smooth-scroll.js"></script>
+  <script src="../js/animations/scroll.js"></script>
+  <script src="../js/animations/cursor.js"></script>
+  <script src="../js/animations/transition.js"></script>
+  <script src="../js/pages/lookbook.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

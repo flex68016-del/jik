@@ -1,0 +1,7 @@
+# JIK — robots.txt
+# ⚠️ REMPLACER https://PLACEHOLDER-DOMAIN.com par le domaine officiel après déploiement
+
+User-agent: *
+Allow: /
+
+Sitemap: https://PLACEHOLDER-DOMAIN.com/sitemap.xml

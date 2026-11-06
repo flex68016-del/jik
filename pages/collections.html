@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique — La Première Collection | JIK</title>
+  <meta name="description" content="Découvrez les 6 pièces de la première collection JIK : des statements de foi imprimés, pensés au Togo.">
+  <link rel="canonical" href="../pages/collections.html" data-canonical>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JIK — Jesus Is King">
+  <meta property="og:title" content="Boutique — La Première Collection | JIK">
+  <meta property="og:description" content="Six déclarations de foi, imprimées et prêtes à porter.">
+  <meta property="og:image" content="../assets/products/jik-002-all-we-need.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/pages/pages.css">
+  <link rel="stylesheet" href="../css/pages/collections.css">
+</head>
+<body data-page="shop" data-base-path="../">
+
+  <main>
+    <header class="page-hero">
+      <div class="page-hero__content">
+        <p class="eyebrow eyebrow--gold" data-reveal data-i18n="shop.eyebrow">Boutique</p>
+        <h1 class="page-hero__title" data-split="chars" data-i18n="shop.title">La Première Collection</h1>
+        <p class="page-hero__lead" data-reveal data-i18n="shop.intro">Six déclarations de foi, imprimées et prêtes à porter. Chaque commande est confirmée manuellement via WhatsApp.</p>
+      </div>
+    </header>
+
+    <section class="section" aria-label="Catalogue" style="padding-top: 0;">
+      <div class="container">
+        <div class="filter-bar" data-reveal>
+          <span class="filter-bar__label" data-i18n="shop.filter.all">Tout</span>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;" data-filter-chips>
+            <button class="filter-chip is-active" type="button" data-filter-chip="all" aria-pressed="true">Tout</button>
+            <button class="filter-chip" type="button" data-filter-chip="faith" aria-pressed="false">Foi</button>
+            <button class="filter-chip" type="button" data-filter-chip="identity" aria-pressed="false">Identité</button>
+            <button class="filter-chip" type="button" data-filter-chip="warfare" aria-pressed="false">Combat spirituel</button>
+            <button class="filter-chip" type="button" data-filter-chip="evangelism" aria-pressed="false">Évangélisation</button>
+          </div>
+          <label class="filter-bar__label" for="shop-sort" data-i18n="shop.sort.label" style="margin-left:auto;">Trier :</label>
+          <select class="filter-select" id="shop-sort" data-shop-sort>
+            <option value="default" data-i18n="shop.sort.default">Référence</option>
+            <option value="name" data-i18n="shop.sort.name">Nom (A–Z)</option>
+            <option value="nameDesc" data-i18n="shop.sort.nameDesc">Nom (Z–A)</option>
+          </select>
+          <span class="filter-bar__label" data-shop-count aria-live="polite"></span>
+        </div>
+
+        <div class="shop-grid" data-shop-grid style="padding-top:2.5rem;">
+          <!-- Rendu JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@4.3.0/lib/anime.umd.min.js"></script>
+
+  <script src="../js/config/config.js"></script>
+  <script src="../js/data/products.js"></script>
+  <script src="../js/data/translations.js"></script>
+  <script src="../js/utils/utils.js"></script>
+  <script src="../js/components/i18n.js"></script>
+  <script src="../js/components/layout.js"></script>
+  <script src="../js/components/product-card.js"></script>
+  <script src="../js/animations/smooth-scroll.js"></script>
+  <script src="../js/animations/scroll.js"></script>
+  <script src="../js/animations/cursor.js"></script>
+  <script src="../js/animations/transition.js"></script>
+  <script src="../js/pages/collections.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

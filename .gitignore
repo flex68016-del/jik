@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Extraction temporaire des assets depuis la présentation PowerPoint
+/_extraction/
+
+# Dépendances / builds locaux
+node_modules/
+.vercel/

@@ -1,0 +1,148 @@
+/* ============================================================
+   JIK — Styles d'animation (intro cinématique, indicateurs)
+   ============================================================ */
+
+/* ---------- Intro cinématique ---------- */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  background: var(--jik-black);
+  display: grid;
+  place-items: center;
+}
+
+.intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: var(--space-gutter);
+}
+
+.intro__logo {
+  width: clamp(140px, 22vw, 240px);
+  clip-path: inset(0 100% 0 0); /* masque révélation gauche → droite */
+}
+
+.intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin: 0;
+  overflow: hidden;
+}
+
+.intro__title span {
+  display: inline-block;
+}
+
+.intro__signature {
+  font-family: var(--font-label);
+  font-size: 0.95rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--jik-gold);
+  opacity: 0;
+}
+
+.intro.is-done {
+  display: none;
+}
+
+/* Sans JS ou reduced motion : pas d'intro */
+html:not(.js) .intro {
+  display: none;
+}
+
+/* ---------- Indicateur de scroll animé ---------- */
+
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--jik-gray);
+}
+
+.scroll-hint__line {
+  width: 1px;
+  height: 56px;
+  background: var(--jik-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-hint__line::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--jik-gold);
+  animation: scroll-hint 2.2s var(--ease-in-out) infinite;
+}
+
+@keyframes scroll-hint {
+  0% { top: -50%; }
+  60%, 100% { top: 110%; }
+}
+
+/* ---------- Marquee ---------- */
+
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--jik-border);
+  padding-block: 1.1rem;
+  white-space: nowrap;
+}
+
+.marquee__track {
+  display: inline-flex;
+  gap: 3rem;
+  will-change: transform;
+}
+
+.marquee__item {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--jik-gray);
+}
+
+.marquee__item em {
+  font-style: normal;
+  color: var(--jik-gold);
+}
+
+/* ---------- Utilitaires d'état pour GSAP ---------- */
+
+/* Les éléments révélés par GSAP démarrent cachés uniquement quand JS est actif */
+.js .gs-hide {
+  opacity: 0;
+}
+
+/* Respect de reduced-motion pour tout ce qui est CSS */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint__line::after {
+    animation: none;
+  }
+  .marquee__track {
+    transform: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
