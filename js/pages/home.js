@@ -11,7 +11,7 @@ JIK.page = (() => {
     const grid = document.querySelector('[data-collection-grid]');
     if (!grid) return;
     // Sélection éditoriale : 4 pièces sur la home, la grille complète est en boutique
-    const featured = ['jik-003', 'jik-001', 'jik-006', 'jik-002']
+    const featured = ['jik-003', 'jik-001', 'jik-007', 'jik-002']
       .map((id) => JIK.utils.productById(id))
       .filter(Boolean);
     grid.innerHTML = featured.map((p) => JIK.productCard(p, lang())).join('');
@@ -26,6 +26,7 @@ JIK.page = (() => {
       { img: 'assets/products/jik-003-faith-over-fear.jpg', alt: { fr: 'T-shirt noir — Faith Over Fear', en: 'Black tee — Faith Over Fear' }, caption: { fr: 'Éditorial 02 — La foi', en: 'Editorial 02 — Faith' } },
       { img: 'assets/products/jik-005-combat.jpg', alt: { fr: 'T-shirt gris — Combat', en: 'Grey tee — Combat' }, caption: { fr: 'Éditorial 03 — Le combat', en: 'Editorial 03 — The fight' } },
       { img: 'assets/products/jik-001-yohanes.jpg', alt: { fr: 'T-shirt gris — Yohanes 14:6', en: 'Grey tee — Yohanes 14:6' }, caption: { fr: 'Éditorial 04 — Les racines', en: 'Editorial 04 — The roots' } },
+      { img: 'assets/products/jik-007-jesus-a-tout-payé.jpg', alt: { fr: 'T-shirt noir — Jésus A Tout Payé', en: 'Black tee — Jesus Paid It All' }, caption: { fr: 'Éditorial 05 — Le paiement', en: 'Editorial 05 — The payment' } },
     ];
 
     track.innerHTML = items.map((it) => `

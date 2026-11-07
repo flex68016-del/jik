@@ -1,22 +1,29 @@
 /* ============================================================
    JIK — Configuration centrale de la marque
    ------------------------------------------------------------
-   ⚠️ À COMPLÉTER PAR LE PROPRIÉTAIRE :
-   - whatsappNumber : numéro WhatsApp officiel au format international
-     SANS "+", SANS espaces. Ex : "22890000000" pour Togo (+228).
-   - instagram : URL du profil Instagram officiel.
-   - siteUrl : domaine final après déploiement (pour SEO/canonical).
+   Coordonnées officielles de JIK Clothing :
+   - WhatsApp : +228 70 09 10 02 (commandes et messages)
+   - Téléphone : +228 78 07 96 82 (appels classiques uniquement)
+   - Instagram : https://www.instagram.com/jik___clothing_brand/
+   - TikTok : https://www.tiktok.com/@jikclothing
    ============================================================ */
 
 const JIK_CONFIG = {
-  // À REMPLACER — numéro officiel non communiqué
-  whatsappNumber: 'REPLACE_WITH_OFFICIAL_NUMBER',
+  // Numéro WhatsApp officiel (sans "+", sans espaces)
+  whatsappNumber: '22870091002',
+
+  // Numéro téléphone officiel (appels classiques uniquement)
+  phoneNumber: '+228 78 07 96 82',
+  phoneLink: 'tel:+22878079682',
 
   currency: 'XOF',
   defaultLanguage: 'fr',
 
-  // À REMPLACER — lien Instagram officiel non communiqué
-  instagramUrl: null,
+  // Lien Instagram officiel
+  instagramUrl: 'https://www.instagram.com/jik___clothing_brand/',
+
+  // Lien TikTok officiel
+  tiktokUrl: 'https://www.tiktok.com/@jikclothing',
 
   // À REMPLACER après achat du domaine — aucun domaine inventé
   siteUrl: null,

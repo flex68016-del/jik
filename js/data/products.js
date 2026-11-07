@@ -1,7 +1,7 @@
 /* ============================================================
    JIK — Catalogue produits centralisé
    ------------------------------------------------------------
-   Les 6 visuels officiels sont mappés à leurs références.
+   Les 7 visuels officiels sont mappés à leurs références.
    Ne jamais remplacer un visuel par un stock photo.
    prices : null = non communiqué (ne pas inventer).
    colors : déduits des visuels officiels uniquement.
@@ -143,6 +143,28 @@ const JIK_PRODUCTS = [
     },
     category: 'evangelism',
     colors: [{ name: { fr: 'Sable', en: 'Sand' }, hex: '#E8DFC8' }],
+    price: null,
+  },
+  {
+    id: 'jik-007',
+    ref: 'JIK-007',
+    name: { fr: 'Jésus A Tout Payé', en: 'Jesus Paid It All' },
+    image: 'assets/products/jik-007-jesus-a-tout-payé.jpg',
+    alt: {
+      fr: "T-shirt noir JIK — dos imprimé « JÉSUS A TOUT PAYÉ » en lettres blanches avec une liste de dettes acquittées et Romains 6:23",
+      en: 'JIK black t-shirt — back print "JÉSUS A TOUT PAYÉ" in white letters with a list of paid debts and Romans 6:23',
+    },
+    bibleRef: { fr: 'Romains 6:23', en: 'Romans 6:23' },
+    bibleVerse: {
+      fr: "Car le salaire du péché, c'est la mort ; mais le don gratuit de Dieu, c'est la vie éternelle en Jésus-Christ notre Seigneur.",
+      en: 'For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.',
+    },
+    concept: {
+      fr: "Le prix a été payé. La dette a été effacée. En Jésus-Christ, nous recevons un cadeau que nous ne pouvions pas acheter : la vie éternelle. Ce modèle rappelle que notre identité ne se définit plus par nos erreurs, notre passé ou nos condamnations, mais par l'œuvre accomplie à la croix.",
+      en: 'The price has been paid. The debt has been erased. In Jesus Christ, we receive a gift we could not buy: eternal life. This model reminds us that our identity is no longer defined by our mistakes, our past, or our condemnations, but by the work accomplished at the cross.',
+    },
+    category: 'faith',
+    colors: [{ name: { fr: 'Noir', en: 'Black' }, hex: '#090909' }],
     price: null,
   },
 ];

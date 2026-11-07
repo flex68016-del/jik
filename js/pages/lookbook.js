@@ -18,6 +18,7 @@ JIK.page = (() => {
       { img: 'assets/products/jik-005-combat.jpg', ref: 'JIK-005', caption: { fr: 'Le combat', en: 'The fight' } },
     ]},
     { type: 'full', img: 'assets/products/jik-004-pray-more.jpg', ref: 'JIK-004', caption: { fr: 'La paix', en: 'The peace' } },
+    { type: 'full', img: 'assets/products/jik-007-jesus-a-tout-payé.jpg', ref: 'JIK-007', caption: { fr: 'Le paiement', en: 'The payment' } },
   ];
 
   function renderItem(item, index) {

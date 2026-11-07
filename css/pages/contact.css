@@ -72,6 +72,14 @@
   margin: 0;
 }
 
+.contact-card__number {
+  font-family: var(--font-label);
+  letter-spacing: 0.15em;
+  color: var(--jik-cream);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 /* FAQ */
 .faq {
   padding-block: var(--space-section);
