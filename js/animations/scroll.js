@@ -2,7 +2,7 @@
    JIK — Système d'animations au scroll (GSAP ScrollTrigger)
    Utilitaires réutilisables, déclarés via data-attributes :
    - data-reveal            → fade + rise
-   - data-reveal="image"    → clip-path reveal (masque)
+   - data-reveal="image"    → fade + scale (plus fiable que clip-path)
    - data-split="chars|words" → découpe + stagger (SplitText-like natif)
    - data-parallax="0.2"    → translation verticale au scroll
    - data-stagger           → enfants révélés en cascade
@@ -74,14 +74,16 @@ JIK.motion = (() => {
 
     // ---- Reveals génériques ----
     document.querySelectorAll('[data-reveal]').forEach((el) => {
+      // Les images utilisent un fade simple au lieu du clip-path pour éviter les problèmes de masquage
       if (el.dataset.reveal === 'image') {
         gsap.fromTo(
           el,
-          { clipPath: 'inset(0 0 100% 0)' },
+          { opacity: 0, scale: 0.95 },
           {
-            clipPath: 'inset(0 0 0% 0)',
-            duration: 1.1,
-            ease: 'power4.out',
+            opacity: 1,
+            scale: 1,
+            duration: 1.0,
+            ease: 'power3.out',
             scrollTrigger: { trigger: el, start: 'top 85%' },
           }
         );
