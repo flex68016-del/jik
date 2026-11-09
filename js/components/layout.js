@@ -106,8 +106,8 @@ JIK.layout = (() => {
           <div>
             <h2 class="footer__title" data-i18n="footer.legal">${JIK.utils.t('footer.legal')}</h2>
             <ul class="footer__list">
-              <li><a class="footer__link" href="${navHref('pages/contact.html')}#privacy" data-i18n="footer.privacy">${JIK.utils.t('footer.privacy')}</a></li>
-              <li><a class="footer__link" href="${navHref('pages/contact.html')}#terms" data-i18n="footer.terms">${JIK.utils.t('footer.terms')}</a></li>
+              <li><a class="footer__link" href="${navHref('pages/mentions-legales.html')}" data-i18n="footer.legal">${JIK.utils.t('footer.legal')}</a></li>
+              <li><a class="footer__link" href="${navHref('pages/politique-confidentialite.html')}" data-i18n="footer.privacy">${JIK.utils.t('footer.privacy')}</a></li>
             </ul>
           </div>
         </div>
