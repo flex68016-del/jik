@@ -19,8 +19,14 @@ JIK.layout = (() => {
   ];
 
   function navHref(href) {
-    // Depuis /pages, les liens remontent d'un niveau
-    return document.body.dataset.basePath ? href.replace('pages/', '') : href;
+    const basePath = document.body.dataset.basePath || '';
+    // Si on est dans /pages/ (basePath = '../') et le lien est pages/xxx.html
+    // on retire pages/ pour rester dans le dossier courant
+    if (basePath && href.startsWith('pages/')) {
+      return href.replace('pages/', '');
+    }
+    // Pour index.html, on ajoute le basePath pour remonter à la racine
+    return basePath + href;
   }
 
   function isCurrentPage(key) {
@@ -106,8 +112,8 @@ JIK.layout = (() => {
           <div>
             <h2 class="footer__title" data-i18n="footer.legal">${JIK.utils.t('footer.legal')}</h2>
             <ul class="footer__list">
-              <li><a class="footer__link" href="${navHref('pages/mentions-legales.html')}" data-i18n="footer.legal">${JIK.utils.t('footer.legal')}</a></li>
-              <li><a class="footer__link" href="${navHref('pages/politique-confidentialite.html')}" data-i18n="footer.privacy">${JIK.utils.t('footer.privacy')}</a></li>
+              <li><a class="footer__link" href="${navHref('mentions-legales.html')}">${JIK.utils.t('footer.legal')}</a></li>
+              <li><a class="footer__link" href="${navHref('politique-confidentialite.html')}">${JIK.utils.t('footer.privacy')}</a></li>
             </ul>
           </div>
         </div>
