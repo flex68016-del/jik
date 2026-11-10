@@ -119,6 +119,9 @@ JIK.layout = (() => {
         </div>
         <div class="footer__bottom">
           <span>© ${year} JIK — Jesus Is King. <span data-i18n="footer.rights">${JIK.utils.t('footer.rights')}</span></span>
+          <span class="footer__credit">
+            <a href="https://amankwaah-prince.site" target="_blank" rel="noopener" class="footer__link">Designed and developed by Dev Amankwaah</a>
+          </span>
           <div class="lang-switch" role="group" aria-label="Langue / Language">
             <button class="lang-switch__btn" data-lang="fr" type="button">FR</button>
             <button class="lang-switch__btn" data-lang="en" type="button">EN</button>
